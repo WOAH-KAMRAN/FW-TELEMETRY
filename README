@@ -2,3 +2,112 @@ this is a fixed wing telemetry project for live data graphing
 <br>
 authors: Kamran And Melvin
 this is our first arduino project together
+
+# AeroStars UAV Telemetry and Navigation System
+
+A lightweight, real-time telemetry and basic navigation system built using **Arduino Nano**, **NRF24L01**, **HC-05 Bluetooth**, and a custom **Android app**. Designed for fixed-wing or twin-motor UAVs, this system enables in-flight monitoring of key flight metrics such as voltage, GPS location, signal strength, and more.
+
+---
+
+## 🚀 Features
+
+- 📡 **Wireless Communication** via NRF24L01 (long-range)
+- 📍 **GPS Integration** using TinyGPS++ for real-time lat/lon tracking
+- 🔋 **Battery Voltage Monitoring** with voltage divider
+- 📶 **RSSI/Signal Strength** tracking (simulated, customizable)
+- 🔁 **1-second update rate** for live feedback
+- 📲 **HC-05 Bluetooth Output** to Android phone
+- 📱 **Custom Android App** for real-time data viewing
+- 🔧 Compact, modular code with easy expansion for more sensors
+
+---
+
+## 🧠 System Architecture
+[ UAV Side - Arduino Nano ] |--> GPS (TinyGPS++) |--> Voltage Sensor (Analog) |--> NRF24L01 (TX) | [ Wireless Link ] ↓ [ GCS Side - Arduino Nano ] |--> NRF24L01 (RX) |--> HC-05 Bluetooth Module ↓ [ Android App via Bluetooth ]
+
+---
+
+## 🔌 Hardware Used
+
+| Component            | Quantity |
+|---------------------|----------|
+| Arduino Nano         |    2     |
+| NRF24L01 + Adapter   |    2     |
+| HC-05 Bluetooth      |    1     |
+| GPS Module (NEO-6M)  |    1     |
+| 0.96" OLED Display   |    1     |
+| Jumper Wires         |   Lots   |
+| Breadboard or perfboard |   2   |
+
+---
+
+## 📲 Android App
+
+A lightweight Android app was developed using **MIT App Inventor** to:
+
+- Display telemetry (voltage, GPS, signal)
+- Show status updates every second
+- Receive data via HC-05 Bluetooth
+- Log data for future analysis *(coming soon)*
+
+📷 Screenshots and APK will be uploaded in `/android-app` folder.
+
+---
+
+---
+
+## 🛠️ How to Use
+
+### 📦 Upload TX Code to UAV Nano
+- Sends GPS, voltage, and signal data over NRF24L01
+- Add GPS on pins D3 (TX) and D4 (RX)
+- Connect voltage divider to A0
+
+### 🖥️ Upload RX Code to GCS Nano
+- Receives and prints data via Serial
+- Also forwards data over HC-05 to Bluetooth
+
+### 📱 Connect to Android App
+- Pair phone with **HC-05** (default PIN: `1234`)
+- Open app → select HC-05 → view live data
+
+---
+
+## 🧪 Sample Output
+
+V:11.4,R:85,G:12.971599,77.594566
+
+
+- V: Voltage (in volts)
+- R: Simulated RSSI (%)
+- G: Latitude, Longitude
+
+---
+
+## ✨ Future Enhancements
+
+- Real-time plotting in Android app
+- Efficiency estimation using thrust sensors
+- Save logs to SD card
+- Waypoint guidance UI
+- Integration with MATLAB and Google Maps API
+
+---
+
+## 👨‍💻 Developed By
+
+- **Kamran** – Embedded Systems & App Development  
+- **Melvin Joseph** – Hardware Integration & System Design  
+
+Special thanks to the AeroStars team for guidance and testing.
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+
+
