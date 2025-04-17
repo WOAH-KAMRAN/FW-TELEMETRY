@@ -1,6 +1,6 @@
 # AeroStars UAV Telemetry and Navigation System
 
-A lightweight, real-time telemetry and basic navigation system built using **Arduino Nano**, **NRF24L01**, **HC-05 Bluetooth**, and a custom **Android app**. Designed for fixed-wing or twin-motor UAVs, this system enables in-flight monitoring of key flight metrics such as voltage, GPS location, signal strength, and more.
+A lightweight, real-time telemetry and basic navigation system built using **Arduino Nano**, **NRF24L01**, **HC-05 Bluetooth**, and a custom **Android app**. Designed for fixed-wing or UAVs, this system enables in-flight monitoring of key flight metrics such as voltage, GPS location, signal strength, and more.
 
 ---
 
